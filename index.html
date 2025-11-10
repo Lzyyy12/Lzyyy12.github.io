@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yuxin Tian | Portfolio</title>
+  <meta name="description" content="Yuxin Tian (Ella) — MSc Advanced Software Engineering @ King’s College London. Frontend, Cloud, AI. Projects, experience, publication, and contact." />
+  <meta property="og:title" content="Yuxin Tian | Portfolio" />
+  <meta property="og:description" content="MSc ASE @ KCL • Frontend • Cloud • AI" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://Lzyyy12.github.io" />
+  <meta name="theme-color" content="#0d1117" />
+  <style>
+    :root{
+      --bg:#0d1117;          /* dark background */
+      --card:#161b22;        /* card surface */
+      --muted:#8b949e;       /* subtle text */
+      --text:#c9d1d9;        /* body text */
+      --accent:#58a6ff;      /* links / accents */
+      --accent-2:#7ee787;    /* secondary accent */
+      --warn:#ffa657;        /* tag color */
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg); color: var(--text);
+    }
+    a{color:var(--accent); text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{width:min(1100px, 92%); margin:0 auto}
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(8px); background:rgba(13,17,23,.6); border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.3px}
+    .brand .dot{width:10px; height:10px; border-radius:50%; background:var(--accent)}
+    .menu{display:flex; gap:18px; font-size:15px}
+    .menu a{opacity:.9}
+    .menu a:hover{opacity:1; text-decoration:underline}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center; padding:56px 0 36px}
+    .hero-card{background:linear-gradient(180deg, rgba(88,166,255,.12), rgba(88,166,255,0) 55%), var(--card); padding:28px; border-radius:var(--radius); box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.06)}
+    .hero h1{font-size:40px; line-height:1.15; margin:6px 0 8px}
+    .hero p{color:var(--muted); font-size:18px; margin:0 0 18px}
+    .hero .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
+    .tag{background:#11161d; border:1px solid rgba(255,255,255,.08); padding:6px 10px; border-radius:999px; font-size:13px; color:#b6c2d1}
+    .cta{display:flex; gap:12px; margin-top:18px}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,.12); background:#0f1420; color:var(--text); font-weight:600}
+    .btn.primary{background:var(--accent); color:#09131b; border-color:transparent}
+    .btn:hover{transform:translateY(-1px); transition:.2s ease}
+    .hero-visual{display:flex; align-items:center; justify-content:center}
+    .avatar{width:180px; height:180px; border-radius:50%; overflow:hidden; border:2px solid rgba(255,255,255,.12); box-shadow:var(--shadow)}
+
+    /* Sections */
+    section{padding:28px 0 10px}
+    .section-title{font-size:22px; margin:14px 0 10px}
+    .grid{display:grid; gap:16px}
+    .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
+    .grid.cols-2{grid-template-columns: repeat(2, 1fr)}
+    .card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    .card h3{margin:6px 0 6px}
+    .muted{color:var(--muted)}
+
+    /* Skills */
+    .skills{display:grid; grid-template-columns: repeat(3,1fr); gap:16px}
+    .skill-list{display:flex; flex-wrap:wrap; gap:8px}
+    .skill{padding:6px 10px; border-radius:999px; background:#0f1420; border:1px solid rgba(255,255,255,.08); font-size:13px}
+
+    /* Timeline */
+    .timeline{border-left:2px solid rgba(255,255,255,.08); margin-left:10px; padding-left:16px}
+    .tl-item{margin:14px 0; position:relative}
+    .tl-item::before{content:""; position:absolute; left:-11px; top:6px; width:10px; height:10px; background:var(--accent-2); border-radius:50%}
+    .tl-item h4{margin:0 0 6px}
+
+    /* Project cards */
+    .project-tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+    .project-tags .tag{background:#0f1a12; border-color:rgba(126,231,135,.25); color:#a9f3b2}
+    .project-actions{display:flex; gap:10px; margin-top:12px}
+
+    footer{padding:40px 0; color:var(--muted); text-align:center}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero{grid-template-columns: 1fr; text-align:center}
+      .cta{justify-content:center}
+      .skills{grid-template-columns: 1fr}
+      .grid.cols-3{grid-template-columns: 1fr}
+      .grid.cols-2{grid-template-columns: 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand"><span class="dot"></span> <span>Yuxin Tian</span></div>
+        <div class="menu">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#publication">Publication</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="hero-card">
+        <p class="muted">MSc Advanced Software Engineering @ King’s College London</p>
+        <h1>Hello, I’m Yuxin (Ella) — building elegant, scalable web & AI systems.</h1>
+        <p>Frontend engineer and product-minded builder with experience across React/Next.js, Vue, Flask, Spring Boot, cloud-native tooling, and data-driven UX. Previously at Microsoft (China) and Carbon Era (Frontend Team Lead).</p>
+        <div class="tags">
+          <span class="tag">Frontend: React • Next.js • Vue</span>
+          <span class="tag">Backend: Flask • Spring Boot</span>
+          <span class="tag">Cloud & DevOps: AWS • Docker • K8s</span>
+          <span class="tag">Data/AI: Python • ML basics</span>
+          <span class="tag">Leadership • Product Thinking</span>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="mailto:ella.tian325@gmail.com">Email Me</a>
+          <a class="btn" href="https://github.com/Lzyyy12" target="_blank">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/ella-tian325/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="avatar">
+          <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" alt="Animated developer avatar" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="card">
+        <p>I’m a software engineer passionate about building meaningful, user-centric products. I combine frontend craftsmanship with backend pragmatism and cloud foundations. I enjoy shipping fast, writing maintainable code, and collaborating across product/design/engineering.</p>
+        <p class="muted">Areas of interest: web performance, design systems, developer experience, visualization, and sustainable tech.</p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills">
+        <div class="card">
+          <h3>Languages</h3>
+          <div class="skill-list">
+            <span class="skill">Java</span>
+            <span class="skill">Python</span>
+            <span class="skill">SQL</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">TypeScript</span>
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Frameworks & Libraries</h3>
+          <div class="skill-list">
+            <span class="skill">React</span>
+            <span class="skill">Next.js</span>
+            <span class="skill">Vue (3)</span>
+            <span class="skill">Element UI</span>
+            <span class="skill">Spring Boot</span>
+            <span class="skill">Flask</span>
+            <span class="skill">Node.js</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Cloud, DevOps & Tools</h3>
+          <div class="skill-list">
+            <span class="skill">AWS</span>
+            <span class="skill">Docker</span>
+            <span class="skill">Kubernetes</span>
+            <span class="skill">Git & GitHub</span>
+            <span class="skill">GitHub Actions</span>
+            <span class="skill">Vercel</span>
+            <span class="skill">Figma</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3>Carbon Era — Sustainable Tech Portal</h3>
+          <p class="muted">Frontend Team Lead • React • Next.js • Microservices</p>
+          <p>Designed and implemented a modular frontend architecture to showcase carbon trading and sustainability services. Coordinated cross‑functional delivery from MVP to investor‑ready demos.</p>
+          <div class="project-tags">
+            <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Design System</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn" href="https://www.linkedin.com/company/%E7%A2%B3%E6%89%BF%E6%97%B6%E4%BB%A3-carbon-era/" target="_blank">Company</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Prometheus.EDU — AI Learning Platform</h3>
+          <p class="muted">Co‑founder • React • Flask • RAG</p>
+          <p>Built structured learning modules (video + community) with AI tutoring. Implemented reusable UI components, API integrations, and analytics dashboards.</p>
+          <div class="project-tags">
+            <span class="tag">React</span><span class="tag">Flask</span><span class="tag">RAG</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn" href="#" target="_blank">Repo</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>MPI Hot Potato — Distributed Game</h3>
+          <p class="muted">HPC Coursework • C • MPI</p>
+          <p>Implemented decentralized elimination and randomized initiation across a logical ring using point‑to‑point messaging only (MPI_Send/MPI_Recv).</p>
+          <div class="project-tags">
+            <span class="tag">C</span><span class="tag">MPI</span><span class="tag">Parallel</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn" href="#" target="_blank">Repo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <div class="card timeline">
+        <div class="tl-item">
+          <h4>Microsoft (China) — Web Frontend Design Intern</h4>
+          <div class="muted">Jul 2024 – Aug 2024 · Beijing</div>
+          <p>Worked on "Asset Library" (AI background replacement) and "Ads Studio" shared components; strengthened MVVM understanding; collaborated with PM/design to refine UX and logging.</p>
+        </div>
+        <div class="tl-item">
+          <h4>Carbon Era Environmental Technology — Frontend Project Team Leader</h4>
+          <div class="muted">Jan 2024 – Present · Beijing / Remote</div>
+          <p>Led architecture/design for the official website; coordinated cross‑departmental collaboration; supported investor engagements for early funding discussions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publication -->
+    <section id="publication">
+      <h2 class="section-title">Publication</h2>
+      <div class="card">
+        <p><strong>Brighten or Harm: Light Pollution Risk Assessment and Prevention.</strong> VOL. 83 (2024): 2nd International Conference on Green Transport, Renewable Energy and Environment (GTREE 2023). DOI: <a href="https://doi.org/10.54097/t7f6ec41" target="_blank" rel="noopener">10.54097/t7f6ec41</a></p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card">
+        <p>Email: <a href="mailto:ella.tian325@gmail.com">ella.tian325@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/Lzyyy12" target="_blank">github.com/Lzyyy12</a> · LinkedIn: <a href="https://www.linkedin.com/in/ella-tian325/" target="_blank">/in/ella-tian325</a></p>
+        <p class="muted">Location: London / Beijing · Open to internships & collaborations.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Yuxin Tian — Built with ❤️ on GitHub Pages</div>
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
